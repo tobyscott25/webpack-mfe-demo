@@ -1,17 +1,23 @@
-# microfrontend-poc
+# React Microfrontend
 
-1. Create host app
+## 1. Start host microfrontend
 
-```bash
-mkdir micro-host
-cd micro-host
-npm init -y
-npm install --save react react-dom
-npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader css-loader html-webpack-plugin sass sass-loader style-loader webpack webpack-cli webpack-dev-server
+The host contains the microfrontend app and client integrates the microfrontend. Run below commands to install dependencies and start host microfrontend.
+
+```sh
+npm install
+npm start
 ```
 
-2. Add required dependencies in each app
+The host server will start at port `8080`. Visiting http://localhost:8080/ will display the microfrontend app.
 
-```bash
-npm install --save-dev webpack webpack-cli html-webpack-plugin webpack-dev-server babel-loader css-loader
+## 2. Start client microfrontend
+
+The client integrates the microfrontend app built in React. Run below commands to install dependencies and start client microfrontend.
+
+```sh
+npm install
+npm start
 ```
+
+The client server will start at port `8081`. Visiting http://localhost:8081/ will display the React app with microfrontend integrated inside it.
