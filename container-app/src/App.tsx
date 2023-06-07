@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Box, Text } from '@chakra-ui/react';
 import "./styles.css";
 
@@ -13,7 +13,7 @@ const App = () => {
       { name && <Text>Your name is: {name}</Text> }
       <Box border={'1px solid black'} shadow={'lg'} rounded={'lg'} mx={'300px'} my={5}>
         <Suspense fallback={<Text>Loading...</Text>}>
-          <MicrofrontendOne onChange={(e) => setName(e.target.value)} />
+          <MicrofrontendOne onChange={(e: any) => setName(e.target.value)} />
         </Suspense>
       </Box>
     </Box>

@@ -4,9 +4,10 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 
 module.exports = {
+  // entry: "./src/index.tsx",
   mode: "development",
   resolve: {
-    extensions: [".css", ".scss", ".js", ".jsx"],
+    extensions: [".css", ".scss", ".js", ".jsx", ".ts", ".tsx"],
   },
   module: {
     rules: [
@@ -31,8 +32,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.jsx?$/,
-        use: ["babel-loader"],
+        test: /\.(js|jsx|tsx|ts)$/,
+        loader: "ts-loader",
         exclude: /node_modules/,
       },
     ],
