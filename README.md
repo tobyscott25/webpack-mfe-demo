@@ -5,7 +5,7 @@
 This serves the playground for development at `http://localhost:8080/` and makes the JS bundle available for consumption at `http://localhost:8080/remoteEntry.js`.
 
 ```sh
-cd app1
+cd microfrontend1
 npm install
 npm start
 ```
