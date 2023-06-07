@@ -1,6 +1,6 @@
 ///<reference types="react" />
 
-declare module "MICROFRONTEND_ONE/app" {
+declare module "microfrontend1/app" {
 	import { ComponentType } from "react";
   
 	interface MicrofrontendOneProps {

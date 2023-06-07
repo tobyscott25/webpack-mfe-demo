@@ -4,13 +4,25 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 
 module.exports = {
-  // entry: "./src/index.tsx",
+  entry: "./src/index.ts",
   mode: "development",
+  devServer: {
+    port: 8080,
+    open: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  },
   resolve: {
-    extensions: [".css", ".scss", ".js", ".jsx", ".ts", ".tsx"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".css", ".scss"],
   },
   module: {
     rules: [
+      {
+        test: /\.(js|jsx|tsx|ts)$/,
+        loader: "ts-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.s?css$/,
         use: [
@@ -31,22 +43,30 @@ module.exports = {
           "sass-loader",
         ],
       },
-      {
-        test: /\.(js|jsx|tsx|ts)$/,
-        loader: "ts-loader",
-        exclude: /node_modules/,
-      },
     ],
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: "container",
+      remotes: {
+        microfrontend1: "microfrontend1@http://localhost:8081/remoteEntry.js",
+      },
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          eager: true,
+          requiredVersion: deps.react
+        },
+        'react-dom': {
+          singleton: true,
+          eager: true,
+          requiredVersion: deps['react-dom'],
+        },
+      },
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
-    }),
-    new ModuleFederationPlugin({
-      name: "CONTAINER_APP",
-      remotes: {
-        MICROFRONTEND_ONE: "MICROFRONTEND_ONE@http://localhost:8080/remoteEntry.js",
-      },
     }),
   ],
 };

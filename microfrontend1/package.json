@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack serve --watch-files ./src"
+    "start": "webpack serve",
+    "build": "webpack --mode production",
+    "serve": "serve dist -p 8081",
+    "clean": "rm -rf dist"
   },
   "keywords": [],
   "author": "",

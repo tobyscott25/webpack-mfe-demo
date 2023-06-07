@@ -4,7 +4,15 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 
 module.exports = {
+  entry: "./src/index.ts",
   mode: "development",
+  devServer: {
+    port: 8081,
+    open: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
@@ -22,15 +30,29 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public", "index.html"),
-    }),
     new ModuleFederationPlugin({
-      name: "MICROFRONTEND_ONE",
+      name: "microfrontend1",
       filename: "remoteEntry.js",
       exposes: {
+        // expose each component
         "./app": "./src/components/App",
       },
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          eager: true,
+          requiredVersion: deps.react
+        },
+        'react-dom': {
+          singleton: true,
+          eager: true,
+          requiredVersion: deps['react-dom'],
+        },
+      },
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "public", "index.html"),
     }),
   ],
 };
