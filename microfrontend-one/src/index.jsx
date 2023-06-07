@@ -3,7 +3,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import PlaygroundContainer from './components/Playground';
 
-const rootElement = document.getElementById("container");
+const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(

@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import App from './App';
 import "./styles.css";
 
 export default function MainApp() {
-  const [name, setName] = React.useState(null);
+  const [name, setName] = useState(null);
   return (
     <>
       <h1>PLAYGROUND CONTAINER (DUMMY HOST)</h1>
