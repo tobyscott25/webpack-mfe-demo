@@ -1,6 +1,6 @@
-# Micro-frontends in TypeScript
+# Micro-frontend PoC in TypeScript
 
-A simple micro-frontend PoC with TypeScript, Chakra UI & Module Federation
+A simple micro-frontend PoC in TypeScript using Module Federation.
 
 ## Running locally
 
