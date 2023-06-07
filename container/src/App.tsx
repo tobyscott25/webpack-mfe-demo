@@ -13,7 +13,7 @@ const App = () => {
       { name && <Text>Your name is: {name}</Text> }
       <Box border={'1px solid black'} shadow={'lg'} rounded={'lg'} mx={'300px'} my={5}>
         <Suspense fallback={<Text>Loading...</Text>}>
-          <MicrofrontendOne onChange={(e: any) => setName(e.target.value)} />
+          <MicrofrontendOne onChange={(event) => setName(event.target.value)} />
         </Suspense>
       </Box>
     </Box>

@@ -13,7 +13,7 @@ const PlaygroundContainer: FunctionComponent = () => {
       { name && <Text>Your name is: {name}</Text> }
      
       <Box border={'1px solid black'} shadow={'lg'} rounded={'lg'} mx={'300px'} my={5}>
-        <App onChange={(e: any) => setName(e.target.value)} />
+        <App onChange={(event) => setName(event.target.value)} />
       </Box>
     </Box>
   );
