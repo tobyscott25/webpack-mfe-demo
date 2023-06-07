@@ -2,7 +2,7 @@
 
 ## 1. Start the microfrontend app
 
-This serves the playground for development at `http://localhost:8080/` and the JS bundle for consumption at `http://localhost:8080/remoteEntry.js`.
+This serves the playground for development at `http://localhost:8080/` and makes the JS bundle available for consumption at `http://localhost:8080/remoteEntry.js`.
 
 ```sh
 cd microfrontend-one
