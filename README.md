@@ -1,23 +1,21 @@
 # React Microfrontend
 
-## 1. Start host microfrontend
+## 1. Start the microfrontend app
 
-The host contains the microfrontend app and client integrates the microfrontend. Run below commands to install dependencies and start host microfrontend.
+This serves the playground for development at `http://localhost:8080/` and the JS bundle for consumption at `http://localhost:8080/remoteEntry.js`.
 
 ```sh
+cd microfrontend-one
 npm install
 npm start
 ```
 
-The host server will start at port `8080`. Visiting http://localhost:8080/ will display the microfrontend app.
+## 2. Start container app
 
-## 2. Start client microfrontend
-
-The client integrates the microfrontend app built in React. Run below commands to install dependencies and start client microfrontend.
+This serves the container app at `http://localhost:8081/`, which fetches and renders the microfrontend from `http://localhost:8080/remoteEntry.js` at run-time.
 
 ```sh
+cd container-app
 npm install
 npm start
 ```
-
-The client server will start at port `8081`. Visiting http://localhost:8081/ will display the React app with microfrontend integrated inside it.
