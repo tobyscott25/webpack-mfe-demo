@@ -6,13 +6,13 @@ const deps = require("./package.json").dependencies;
 module.exports = {
   mode: "development",
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        use: ["babel-loader"],
+        test: /\.(js|jsx|tsx|ts)$/,
+        loader: "ts-loader",
         exclude: /node_modules/,
       },
       {

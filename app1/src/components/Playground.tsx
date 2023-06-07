@@ -1,10 +1,10 @@
 // This is only used for independent development of the microfrontend.
 
-import React, { useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import App from './App';
 import { Box, Text, Code } from '@chakra-ui/react';
 
-export default function MainApp() {
+const PlaygroundContainer: FunctionComponent = () => {
   const [name, setName] = useState(null);
   return (
     <Box textAlign={'center'}>
@@ -13,8 +13,10 @@ export default function MainApp() {
       { name && <Text>Your name is: {name}</Text> }
      
       <Box border={'1px solid black'} shadow={'lg'} rounded={'lg'} mx={'300px'} my={5}>
-        <App onChange={(e) => setName(e.target.value)} />
+        <App onChange={(e: any) => setName(e.target.value)} />
       </Box>
     </Box>
   );
 }
+
+export default PlaygroundContainer;
