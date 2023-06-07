@@ -1,10 +1,10 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import "./styles.css";
 
 const MicrofrontendOne = lazy(() => import("MICROFRONTEND_ONE/app"));
 
 const App = () => {
-  const [name, setName] = React.useState(null);
+  const [name, setName] = useState(null);
 
   return (
     <div className="App">
