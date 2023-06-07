@@ -46,7 +46,7 @@ module.exports = {
       template: path.resolve(__dirname, "public", "index.html"),
     }),
     new ModuleFederationPlugin({
-      name: "FIRST_APP",
+      name: "MICROFRONTEND_ONE",
       filename: "remoteEntry.js",
       exposes: {
         "./app": "./src/components/App",

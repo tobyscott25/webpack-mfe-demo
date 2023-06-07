@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import "./styles.css";
 
-const FirstApp = lazy(() => import("FIRST_APP/app"));
+const FirstApp = lazy(() => import("MICROFRONTEND_ONE/app"));
 
 const App = () => {
   const [name, setName] = React.useState(null);

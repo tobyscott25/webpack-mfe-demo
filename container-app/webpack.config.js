@@ -42,9 +42,9 @@ module.exports = {
       template: path.resolve(__dirname, "public", "index.html"),
     }),
     new ModuleFederationPlugin({
-      name: "MICRO",
+      name: "CONTAINER_APP",
       remotes: {
-        FIRST_APP: "FIRST_APP@http://localhost:8080/remoteEntry.js",
+        MICROFRONTEND_ONE: "MICROFRONTEND_ONE@http://localhost:8080/remoteEntry.js",
       },
     }),
   ],
