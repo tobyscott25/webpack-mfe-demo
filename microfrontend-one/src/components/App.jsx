@@ -1,3 +1,5 @@
+// This is the microfrontend entry point.
+
 import * as React from 'react';
 
 export default function App({ onChange }) {

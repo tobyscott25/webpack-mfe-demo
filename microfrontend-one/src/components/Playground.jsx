@@ -1,3 +1,5 @@
+// This is only used for independent development of the microfrontend.
+
 import React, { useState } from 'react';
 import App from './App';
 
