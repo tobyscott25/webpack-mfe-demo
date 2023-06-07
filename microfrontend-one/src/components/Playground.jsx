@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import App from './App';
-import "./styles.css";
 
 export default function MainApp() {
   const [name, setName] = useState(null);
