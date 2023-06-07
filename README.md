@@ -1,10 +1,13 @@
 # microfrontend-poc
 
-1. Create host and remote apps
+1. Create host app
 
 ```bash
-npx create-react-app host-app --template @chakra-ui/typescript
-npx create-react-app remote-app --template @chakra-ui/typescript
+mkdir micro-host
+cd micro-host
+npm init -y
+npm install --save react react-dom
+npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader css-loader html-webpack-plugin sass sass-loader style-loader webpack webpack-cli webpack-dev-server
 ```
 
 2. Add required dependencies in each app
