@@ -1,11 +1,11 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useState, FunctionComponent } from "react";
 import { Box, Text } from '@chakra-ui/react';
 import "./styles.css";
 
 const MicrofrontendOne = lazy(() => import("microfrontend1/app"));
 
-const App = () => {
-  const [text, setText] = useState(null);
+const App: FunctionComponent = (): JSX.Element => {
+  const [text, setText] = useState<string>('');
 
   return (
     <Box textAlign={'center'} className="App">
