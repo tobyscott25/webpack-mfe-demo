@@ -1,10 +1,10 @@
 import { lazy, Suspense, useState, FunctionComponent } from "react";
 import { Box, Text } from '@chakra-ui/react';
-import "./styles.css";
+import "../assets/styles.css";
 
 const MicrofrontendOne = lazy(() => import("microfrontend1/app"));
 
-const App: FunctionComponent = (): JSX.Element => {
+export const ChildAppPage: FunctionComponent = (): JSX.Element => {
   const [text, setText] = useState<string>('');
 
   return (
@@ -19,5 +19,3 @@ const App: FunctionComponent = (): JSX.Element => {
     </Box>
   );
 };
-
-export default App;

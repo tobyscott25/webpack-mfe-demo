@@ -7,6 +7,7 @@ module.exports = {
   entry: "./src/index.ts",
   mode: "development",
   devServer: {
+    historyApiFallback: true,
     port: 8080,
     open: true,
     headers: {
@@ -62,6 +63,11 @@ module.exports = {
           singleton: true,
           eager: true,
           requiredVersion: deps['react-dom'],
+        },
+        "react-router-dom": {
+          singleton: true,
+          eager: true,
+          requiredVersion: deps["react-router-dom"],
         },
       },
     }),
