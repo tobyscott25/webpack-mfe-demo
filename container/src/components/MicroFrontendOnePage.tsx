@@ -4,14 +4,13 @@ import "../assets/styles.css";
 
 const MicrofrontendOne = lazy(() => import("microfrontend1/app"));
 
-export const ChildAppPage: FunctionComponent = (): JSX.Element => {
+export const MicroFrontendOnePage: FunctionComponent = (): JSX.Element => {
   const [text, setText] = useState<string>('');
 
   return (
-    <Box textAlign={'center'} className="App">
-      <Text fontSize={'2xl'} my={5}>CONTAINER (HOST)</Text>
-      { text && <Text>Your text is: {text}</Text> }
-      <Box border={'1px solid black'} shadow={'lg'} rounded={'lg'} mx={'300px'} my={5}>
+    <Box textAlign={'center'}>
+      { text && <Text>Evidence of shared state: Your text is: {text}</Text> }
+      <Box border={'1px solid black'} shadow={'lg'} rounded={'lg'} mx={'300px'} my={5} className="App">
         <Suspense fallback={<Text>Loading...</Text>}>
           <MicrofrontendOne onChange={(event) => setText(event.target.value)} />
         </Suspense>

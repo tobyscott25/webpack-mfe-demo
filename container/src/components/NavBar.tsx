@@ -27,8 +27,11 @@ export const NavBar: FunctionComponent = (): ReactElement => {
 				<Link as={ReactRouterLink} to="/" mr={10}>
 					Home
 				</Link>
-                <Link as={ReactRouterLink} to="/child-app" mr={10}>
-					Child module
+                <Link as={ReactRouterLink} to="/microfrontend1" mr={10}>
+					Microfrontend 1
+				</Link>
+                <Link as={ReactRouterLink} to="/microfrontend2" mr={10}>
+					Microfrontend 2
 				</Link>
 				<Link as={ReactRouterLink} to="/abc123" mr={10}>
 					404 Example

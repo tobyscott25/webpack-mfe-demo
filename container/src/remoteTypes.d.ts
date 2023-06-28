@@ -13,8 +13,15 @@ declare module "microfrontend1/app" {
 	export default MicrofrontendOne;
 }
 
-// declare module "MICROFRONTEND_TWO/MicrofrontendTwo" {
-// 	const MicrofrontendTwo: React.ComponentType;
+declare module "microfrontend2/app" {
+	import { ComponentType } from "react";
 
-// 	export default MicrofrontendTwo;
-// }
+	interface MicrofrontendTwoProps {
+		onChange: (e: any) => void;
+		// Other props...
+	}
+
+	const MicrofrontendTwo: ComponentType<MicrofrontendTwoProps>;
+
+	export default MicrofrontendTwo;
+}

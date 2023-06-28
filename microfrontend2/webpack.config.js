@@ -7,15 +7,14 @@ module.exports = {
   entry: "./src/index.ts",
   mode: "development",
   devServer: {
-    historyApiFallback: true,
-    port: 8080,
+    port: 8082,
     open: true,
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx", ".css", ".scss"],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   module: {
     rules: [
@@ -25,33 +24,18 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.s?css$/,
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              url: {
-                filter: (url) => {
-                  if (url.startsWith("data:")) {
-                    return false;
-                  }
-                  return true;
-                },
-              },
-            },
-          },
-          "sass-loader",
-        ],
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "container",
-      remotes: {
-        microfrontend1: "microfrontend1@http://localhost:8081/remoteEntry.js",
-        microfrontend2: "microfrontend2@http://localhost:8082/remoteEntry.js",
+      name: "microfrontend2",
+      filename: "remoteEntry.js",
+      exposes: {
+        // expose each component
+        "./app": "./src/components/App",
       },
       shared: {
         ...deps,

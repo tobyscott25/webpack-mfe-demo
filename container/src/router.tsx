@@ -7,8 +7,10 @@ import { RouterError } from './components/RouterError'
 
 import { Login } from './components/Login'
 import { Home } from './components/Home'
-import { ChildAppPage } from './components/ChildAppPage'
+import { MicroFrontendOnePage } from './components/MicroFrontendOnePage'
+import { MicroFrontendTwoPage } from './components/MicroFrontendTwoPage'
 import { NotFound } from './components/NotFound'
+
 
 const router: Router = createBrowserRouter([
 	{
@@ -24,8 +26,12 @@ const router: Router = createBrowserRouter([
 						element: <Home />,
 					},
                     {
-						path: '/child-app',
-						element: <ChildAppPage />,
+						path: '/microfrontend1',
+						element: <MicroFrontendOnePage />,
+					},
+                    {
+						path: '/microfrontend2',
+						element: <MicroFrontendTwoPage />,
 					},
 					{
 						path: '*',
