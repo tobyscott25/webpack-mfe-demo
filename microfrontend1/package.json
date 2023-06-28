@@ -10,7 +10,7 @@
     "clean": "rm -rf dist"
   },
   "keywords": [],
-  "author": "",
+  "author": "Toby Scott",
   "license": "MIT",
   "dependencies": {
     "@chakra-ui/react": "^2.7.0",
