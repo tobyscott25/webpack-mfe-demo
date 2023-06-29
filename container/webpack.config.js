@@ -55,10 +55,10 @@ module.exports = {
       },
       shared: {
         ...deps,
-        react: {
+        'react': {
           singleton: true,
           eager: true,
-          requiredVersion: deps.react
+          requiredVersion: deps['react']
         },
         'react-dom': {
           singleton: true,
