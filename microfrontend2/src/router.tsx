@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { Navigate, createBrowserRouter } from 'react-router-dom'
 import { Router } from '@remix-run/router'
 
 import { Layout } from './components/Layout'
@@ -17,7 +17,7 @@ const router: Router = createBrowserRouter([
 		children: [
 			{
 				index: true,
-				element: <Page1 />,
+				element: <Navigate to={'/one'} />,
 			},
 			{
 				path: '/one',
