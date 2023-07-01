@@ -15,6 +15,7 @@ Features to add:
 
 - Error Boundaries in parent app incase a microfrontend crashes
 - Support for multiple environments (dev, staging, prod)
+- Live demo
 
 ### Running locally
 
