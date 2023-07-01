@@ -7,6 +7,7 @@ module.exports = {
   entry: "./src/index.ts",
   mode: "development",
   devServer: {
+    historyApiFallback: true,
     port: 8082,
     open: true,
     headers: {
@@ -35,7 +36,7 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         // expose each component
-        "./app": "./src/components/App",
+        "./app": "./src/components/AppRoot",
       },
       shared: {
         ...deps,

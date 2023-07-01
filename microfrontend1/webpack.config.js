@@ -7,6 +7,7 @@ module.exports = {
   entry: "./src/index.ts",
   mode: "development",
   devServer: {
+    historyApiFallback: true,
     port: 8081,
     open: true,
     headers: {

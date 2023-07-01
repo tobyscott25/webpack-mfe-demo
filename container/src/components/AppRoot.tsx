@@ -1,9 +1,15 @@
 import { FunctionComponent, ReactElement, useEffect, useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { LocalStorageSessionKeys, useUserStore } from '../stores/userStore'
 
-import { Flex } from '@chakra-ui/react'
+import { Flex, Spinner, Text } from '@chakra-ui/react'
 import { NavBar } from './NavBar'
+import { ProtectedRoute } from './ProtectedRoute'
+import { NotFound } from './NotFound'
+import { Login } from './Login'
+import { Home } from './Home'
+import { MicroFrontendOnePage } from './MicroFrontendOnePage'
+import { MicroFrontendTwoPage } from './MicroFrontendTwoPage'
 
 export const AppRoot: FunctionComponent = (): ReactElement => {
 	const userStore = useUserStore()
@@ -37,7 +43,7 @@ export const AppRoot: FunctionComponent = (): ReactElement => {
 	}, [])
 
 	return (
-		<>
+		<BrowserRouter>
 			{appInitialised ? (
 				<Flex flexDir={'column'} minHeight={'100vh'}>
 					{(userStore.id ? true : false) && <NavBar />}
@@ -48,14 +54,24 @@ export const AppRoot: FunctionComponent = (): ReactElement => {
 						// border={'1px solid green'}
 						flexGrow={1}
 					>
-						{/* An <Outlet> renders the component for the child route that is currently active. */}
-						<Outlet />
+						<Routes>
+							<Route element={<ProtectedRoute />}>
+								<Route index element={<Home />} />
+								<Route path="microfrontend1/*" element={<MicroFrontendOnePage />} />
+								<Route path="microfrontend2/*" element={<MicroFrontendTwoPage />} />
+							</Route>
+							<Route path="login" element={<Login />} />
+							<Route path="*" element={<NotFound />} />
+						</Routes>
 					</Flex>
 
 				</Flex>
 			) : (
-				<Flex>Loading...</Flex>
+				<Flex>
+					<Spinner />
+					<Text>Loading...</Text>
+				</Flex>
 			)}
-		</>
+		</BrowserRouter>
 	)
 }
