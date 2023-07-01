@@ -6,6 +6,9 @@ const deps = require("./package.json").dependencies;
 module.exports = {
   entry: "./src/index.ts",
   mode: "development",
+  output: {
+    publicPath: "http://localhost:8080/",
+  },
   devServer: {
     historyApiFallback: true,
     port: 8080,
