@@ -9,6 +9,12 @@ Features in this PoC:
 - Routing and sub-routing with React Router in the parent app and microfrontends
 - Each microfrontend has its own 404 page
 - Authentication and protected routes in parent app
+- Shared component library between parent app and microfrontends for UI consistency
+
+Features to add:
+
+- Error Boundaries in parent app incase a microfrontend crashes
+- Support for multiple environments (dev, staging, prod)
 
 ### Running locally
 
