@@ -1,4 +1,4 @@
-// This is the microfrontend entry point.
+// This is the microfrontend entry point. Must export the component as default.
 
 import { FunctionComponent } from "react";
 import { Input } from '@chakra-ui/react';
