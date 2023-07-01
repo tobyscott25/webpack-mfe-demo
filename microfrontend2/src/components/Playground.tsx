@@ -1,7 +1,7 @@
 // This is only used for independent development of the microfrontend.
 
 import { FunctionComponent } from 'react';
-import { AppRoot } from './AppRoot';
+import AppRoot from './AppRoot';
 import { Box, Text, Code } from '@chakra-ui/react';
 
 const PlaygroundContainer: FunctionComponent = () => {
