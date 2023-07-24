@@ -1,9 +1,10 @@
 import { FunctionComponent } from "react";
+import { Box, Text } from "@chakra-ui/react";
 
 export const Page1: FunctionComponent = () => {
   return (
-    <div>
-      <h1>Page one!</h1>
-    </div>
+    <Box>
+      <Text fontSize={'xl'}>Page one!</Text>
+    </Box>
   );
 }

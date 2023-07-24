@@ -8,7 +8,7 @@ module.exports = {
   mode: "development",
   devServer: {
     historyApiFallback: true,
-    port: 8081,
+    port: 3081,
     open: true,
     headers: {
       "Access-Control-Allow-Origin": "*",

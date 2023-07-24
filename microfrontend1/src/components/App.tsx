@@ -1,18 +1,15 @@
 // This is the microfrontend entry point. Must export the component as default.
 
 import { FunctionComponent } from "react";
-import { Input } from '@chakra-ui/react';
+import { Box, Text } from "@chakra-ui/react";
+import ToDoList from "./ToDoList";
 
-interface AppProps {
-  onChange: (e: any) => void;
-}
-
-const App: FunctionComponent<AppProps> = ({ onChange }) => {
+const App: FunctionComponent = () => {
   return (
-    <div>
-      <h1>MICROFRONTEND ONE (REMOTE)</h1>
-      <Input onChange={onChange} type="text" placeholder="Enter some text here..." />
-    </div>
+    <Box p={5}>
+      <Text fontSize={'lg'}>To-Do List</Text>
+      <ToDoList />
+    </Box>
   );
 }
 

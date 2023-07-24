@@ -21,35 +21,42 @@ Features to add:
 
 #### 1. Start the microfrontend apps
 
-This serves the microfrontends on ports `8081` and `8082`.
+This serves the microfrontends on ports `3081`, `3082` and `3083`.
 
 This makes their isolated development playgrounds available at
 
-- `http://localhost:8081/`
-- `http://localhost:8082/`
+- `http://localhost:3081/`
+- `http://localhost:3082/`
+- `http://localhost:3083/`
 
 and their JS bundles (available for consumption by parent app) at
 
-- `http://localhost:8081/remoteEntry.js`
-- `http://localhost:8082/remoteEntry.js`
+- `http://localhost:3081/remoteEntry.js`
+- `http://localhost:3082/remoteEntry.js`
+- `http://localhost:3083/remoteEntry.js`
 
 ```sh
-# First microfrontend
+# First microfrontend (very basic to-do app)
 cd microfrontend1
 npm install
 npm start
 
-# Second microfrontend
+# Second microfrontend (shared routing example)
 cd microfrontend2
+npm install
+npm start
+
+# Third microfrontend (shared state example)
+cd microfrontend3
 npm install
 npm start
 ```
 
 #### 2. Start parent app
 
-This serves the parent app at `http://localhost:8081/`.
+This serves the parent app at `http://localhost:3080/`.
 
-The parent app is configured to lazy-load the microfrontends from the location their JS bundles are served from (`http://localhost:8081/remoteEntry.js` and `http://localhost:8082/remoteEntry.js`) at run-time.
+The parent app is configured to lazy-load the microfrontends (asyncronously, over the network from `http://localhost:3081/remoteEntry.js`, etc) at run-time.
 
 ```sh
 cd container

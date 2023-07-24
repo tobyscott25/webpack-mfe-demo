@@ -15,14 +15,11 @@ import {
 	ModalBody,
 	ModalFooter,
 } from '@chakra-ui/react'
-// import { Logo } from '../../Logo'
 
 export const Home: FunctionComponent = (): ReactElement => {
 	const { isOpen, onOpen, onClose } = useDisclosure()
 	return (
 		<Box>
-			{/* <Logo h="40vmin" pointerEvents="none" /> */}
-
 			<Text my={10}>
 				Edit <Code>src/pages/Home.tsx</Code> and save to reload.{' '}
 				<Link

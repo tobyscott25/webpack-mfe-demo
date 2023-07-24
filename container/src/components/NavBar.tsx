@@ -15,9 +15,7 @@ export const NavBar: FunctionComponent = (): ReactElement => {
 		<Flex
 			alignItems={'center'}
 			justifyContent={'space-between'}
-			borderBottom={1}
-			borderStyle={'solid'}
-			borderColor={'gray.100'}
+			bg={'gray.200'}
 			shadow={'sm'}
 			px={10}
 			py={1}
@@ -28,10 +26,13 @@ export const NavBar: FunctionComponent = (): ReactElement => {
 					Home
 				</Link>
                 <Link as={ReactRouterLink} to="/microfrontend1" mr={10}>
-					Microfrontend 1
+					MF 1 (To-do app)
 				</Link>
                 <Link as={ReactRouterLink} to="/microfrontend2" mr={10}>
-					Microfrontend 2
+					MF 2 (Shared router example)
+				</Link>
+                <Link as={ReactRouterLink} to="/microfrontend3" mr={10}>
+					MF 3 (Shared state example)
 				</Link>
 				<Link as={ReactRouterLink} to="/abc123" mr={10}>
 					404 Example

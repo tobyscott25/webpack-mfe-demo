@@ -2,26 +2,24 @@
 
 declare module "microfrontend1/app" {
 	import { ComponentType } from "react";
-
-	interface MicrofrontendOneProps {
-		onChange: (e: any) => void;
-		// Other props...
-	}
-
-	const MicrofrontendOne: ComponentType<MicrofrontendOneProps>;
-
-	export default MicrofrontendOne;
+	interface Props {}
+	const MicrofrontendOne: ComponentType<Props>
+	export default MicrofrontendOne
 }
 
 declare module "microfrontend2/app" {
 	import { ComponentType } from "react";
+	interface Props {}
+	const MicrofrontendTwo: ComponentType<Props>;
+	export default MicrofrontendTwo;
+}
 
-	interface MicrofrontendTwoProps {
+declare module "microfrontend3/app" {
+	import { ComponentType } from "react";
+	interface Props {
 		onChange: (e: any) => void;
 		// Other props...
 	}
-
-	const MicrofrontendTwo: ComponentType<MicrofrontendTwoProps>;
-
-	export default MicrofrontendTwo;
+	const MicrofrontendThree: ComponentType<Props>;
+	export default MicrofrontendThree;
 }

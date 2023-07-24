@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --mode production",
-    "serve": "serve dist -p 8081",
+    "serve": "serve dist -p 3081",
     "clean": "rm -rf dist"
   },
   "keywords": [],
