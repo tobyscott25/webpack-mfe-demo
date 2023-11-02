@@ -1,8 +1,8 @@
-import { FunctionComponent, ReactElement } from 'react'
-import { Outlet, Navigate } from 'react-router-dom'
-import { useUserStore } from '../stores/userStore'
+import { FunctionComponent, ReactElement } from "react";
+import { Outlet, Navigate } from "react-router-dom";
+import { useSessionStore } from "../stores/sessionStore";
 
 export const ProtectedRoute: FunctionComponent = (): ReactElement => {
-	const userStore = useUserStore()
-	return userStore.id ? <Outlet /> : <Navigate to="/login" />
-}
+  const sessionStore = useSessionStore();
+  return sessionStore.token ? <Outlet /> : <Navigate to="/login" />;
+};
