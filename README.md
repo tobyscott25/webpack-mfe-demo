@@ -59,7 +59,7 @@ This serves the parent app at `http://localhost:3080/`.
 The parent app is configured to lazy-load the microfrontends (asyncronously, over the network from `http://localhost:3081/remoteEntry.js`, etc) at run-time.
 
 ```sh
-cd container
+cd parent
 npm install
 npm start
 ```

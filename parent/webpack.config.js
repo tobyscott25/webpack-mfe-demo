@@ -51,7 +51,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "container",
+      name: "parent",
       remotes: {
         microfrontend1: "microfrontend1@http://localhost:3081/remoteEntry.js",
         microfrontend2: "microfrontend2@http://localhost:3082/remoteEntry.js",
@@ -59,15 +59,15 @@ module.exports = {
       },
       shared: {
         ...deps,
-        'react': {
+        react: {
           singleton: true,
           // eager: true,
-          requiredVersion: deps['react']
+          requiredVersion: deps["react"],
         },
-        'react-dom': {
+        "react-dom": {
           singleton: true,
           // eager: true,
-          requiredVersion: deps['react-dom'],
+          requiredVersion: deps["react-dom"],
         },
         "react-router-dom": {
           singleton: true,

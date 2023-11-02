@@ -1,15 +1,17 @@
 // This is the microfrontend entry point. Must export the component as default.
 
 import { FunctionComponent } from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, ChakraProvider, Text } from "@chakra-ui/react";
 import ToDoList from "./ToDoList";
 
 const App: FunctionComponent = () => {
   return (
-    <Box p={5}>
-      <Text fontSize={'lg'}>To-Do List</Text>
-      <ToDoList />
-    </Box>
+    <ChakraProvider>
+      <Box p={5}>
+        <Text fontSize={'lg'}>To-Do List</Text>
+        <ToDoList />
+      </Box>
+    </ChakraProvider>
   );
 }
 
