@@ -1,6 +1,6 @@
-# Micro-frontend PoC in TypeScript
+# Webpack micro-frontend demo
 
-A simple micro-frontend PoC in TypeScript using Module Federation.
+A simple micro-frontend demo in TypeScript using Webpack Module Federation.
 
 Features in this PoC:
 
