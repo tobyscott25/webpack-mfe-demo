@@ -1,12 +1,12 @@
 {
-  "name": "microfrontend3",
+  "name": "mfe-todo-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --mode production",
-    "serve": "serve dist -p 3083",
+    "serve": "serve dist -p 3081",
     "clean": "rm -rf dist"
   },
   "keywords": [],

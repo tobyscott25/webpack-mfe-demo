@@ -8,11 +8,11 @@ const App: FunctionComponent = () => {
   return (
     <ChakraProvider>
       <Box p={5}>
-        <Text fontSize={'lg'}>To-Do List</Text>
+        <Text fontSize={"lg"}>To-Do List</Text>
         <ToDoList />
       </Box>
     </ChakraProvider>
   );
-}
+};
 
 export default App;

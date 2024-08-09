@@ -53,9 +53,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "parent",
       remotes: {
-        microfrontend1: "microfrontend1@http://localhost:3081/remoteEntry.js",
-        microfrontend2: "microfrontend2@http://localhost:3082/remoteEntry.js",
-        microfrontend3: "microfrontend3@http://localhost:3083/remoteEntry.js",
+        toDoApp: "mfe_todo_app@http://localhost:3081/remoteEntry.js",
+        subRoutingExample:
+          "mfe_subrouting@http://localhost:3082/remoteEntry.js",
       },
       shared: {
         ...deps,

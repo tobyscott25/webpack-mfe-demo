@@ -8,7 +8,7 @@ module.exports = {
   mode: "development",
   devServer: {
     historyApiFallback: true,
-    port: 3083,
+    port: 3082,
     open: true,
     headers: {
       "Access-Control-Allow-Origin": "*",
@@ -32,23 +32,23 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "microfrontend3",
+      name: "mfe_subrouting",
       filename: "remoteEntry.js",
       exposes: {
         // expose each component
-        "./app": "./src/components/App",
+        "./app": "./src/components/AppRoot",
       },
       shared: {
         ...deps,
         react: {
           singleton: true,
           // eager: true,
-          requiredVersion: deps.react
+          requiredVersion: deps.react,
         },
-        'react-dom': {
+        "react-dom": {
           singleton: true,
           // eager: true,
-          requiredVersion: deps['react-dom'],
+          requiredVersion: deps["react-dom"],
         },
         "react-router-dom": {
           singleton: true,
